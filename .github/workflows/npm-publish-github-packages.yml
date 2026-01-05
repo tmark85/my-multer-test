@@ -31,7 +31,16 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+        
+      - name: Verify Multer installation 
+        run: npm ls multer
 
+      - name: Verify Multer folder exists 
+        run: ls -R node_modules/multer
+
+      - name: Test Multer require 
+        run: node -e "require('multer'); console.log('Multer OK')"
+        
       - name: Build (if applicable)
         run: npm run build --if-present
 
