@@ -13,6 +13,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         
+      - name: Disable strict integrity check
+        run: npm config set strict-ssl false
+
+     
       - name: Force public npm registry
         run: npm config set registry https://registry.npmjs.org/
       
